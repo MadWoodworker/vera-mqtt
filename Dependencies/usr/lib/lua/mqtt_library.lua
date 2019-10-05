@@ -74,9 +74,9 @@
 function isPsp() return(Socket ~= nil) end
 
 if (not isPsp()) then
-  require("socket")
-  require("io")
-  require("ltn12")
+  socket = require("socket")
+  io = require("io")
+  ltn12 = require("ltn12")
 --require("ssl")
 end
 
