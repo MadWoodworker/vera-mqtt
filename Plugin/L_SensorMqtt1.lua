@@ -286,6 +286,9 @@ function publishMessage(topic, payload)
 	-- If we aren't connected for some reason, then connect first
 	if not connectedToBroker() then
 		connectToMqtt()
+		if connectedToBroker() then
+			Subscriptions.retrieve()
+		end
 	end
 
 	-- Try to publish.  Mqtt standard is fire and forget on publishing.
@@ -592,4 +595,5 @@ function startup(lul_device)
 	end
 
     luup.set_failure(false, DEVICE_ID)
+    return true
 end
