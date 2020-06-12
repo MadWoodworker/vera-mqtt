@@ -287,7 +287,7 @@ function publishMessage(topic, payload)
 	if not connectedToBroker() then
 		connectToMqtt()
 		if connectedToBroker() then
-			Subscriptions.retrieve()
+--			Subscriptions.retrieve()
 		end
 	end
 
